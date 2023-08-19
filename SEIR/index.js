@@ -187,11 +187,11 @@ board = JXG.JSXGraph.initBoard('jxgbox', {
   };
   
   
-  g4 = board.createElement('curve', [t, dataInfected], {
+  g5 = board.createElement('curve', [t, dataInfected], {
     strokeColor: 'red',
     strokeWidth: '2px'
   });
-  g4.updateDataArray = function() {
+  g5.updateDataArray = function() {
     let data = ode();
     this.dataX = [];
     this.dataY = [];
@@ -202,11 +202,11 @@ board = JXG.JSXGraph.initBoard('jxgbox', {
   };
   
   
-  g4 = board.createElement('curve', [t, dataRecovered], {
+  g6 = board.createElement('curve', [t, dataRecovered], {
     strokeColor: 'green',
     strokeWidth: '2px'
   });
-  g4.updateDataArray = function() {
+  g6.updateDataArray = function() {
     let data = ode();
     this.dataX = [];
     this.dataY = [];
