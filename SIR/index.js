@@ -71,7 +71,7 @@ function solve_ode(x0, I, T, f) {
 }
 
 function ode() {
-    let I = [0, 100];
+    let I = [0, 1000];
     let T = 1000;
 
     let f = function(t, x) {
