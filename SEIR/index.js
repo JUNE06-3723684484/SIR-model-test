@@ -1,4 +1,3 @@
-function draw() {
 board = JXG.JSXGraph.initBoard('jxgbox', {
     boundingbox: [-5, 105, 105, -5],
     axis: true,
@@ -216,5 +215,3 @@ board = JXG.JSXGraph.initBoard('jxgbox', {
       this.dataY[i] = data[i][3];
     }
   };
-  
-}
