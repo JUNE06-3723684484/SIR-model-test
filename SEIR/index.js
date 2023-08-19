@@ -1,5 +1,3 @@
-let board;
-
 board = JXG.JSXGraph.initBoard('jxgbox', {
     boundingbox: [-5, 105, 105, -5],
     axis: true,
