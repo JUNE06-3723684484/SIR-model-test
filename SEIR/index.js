@@ -86,22 +86,22 @@ board = JXG.JSXGraph.initBoard('jxgbox', {
     fillColor: 'green'
   });
   
-  var T = 100;
-  var N = 100;
-  var g3 = null;
-  var g4 = null;
-  var g5 = null;
-  var g6 = null;
+  let T = 100;
+  let N = 100;
+  let g3 = null;
+  let g4 = null;
+  let g5 = null;
+  let g6 = null;
   
   
   function solve_ode(x0, I, T, f) {
-    var data = [x0];
-    var dt = (I[1] - I[0]) / T;
+    let data = [x0];
+    let dt = (I[1] - I[0]) / T;
     for (let i = 1; i < T; ++i) {
-      var dS_dt = data[i - 1][0] + dt * f(0, data[i - 1])[0];
-      var dE_dt = data[i - 1][1] + dt * f(0, data[i - 1])[1];    
-      var dI_dt = data[i - 1][2] + dt * f(0, data[i - 1])[2];
-      var dR_dt = data[i - 1][3] + dt * f(0, data[i - 1])[3];    
+      let dS_dt = data[i - 1][0] + dt * f(0, data[i - 1])[0];
+      let dE_dt = data[i - 1][1] + dt * f(0, data[i - 1])[1];    
+      let dI_dt = data[i - 1][2] + dt * f(0, data[i - 1])[2];
+      let dR_dt = data[i - 1][3] + dt * f(0, data[i - 1])[3];    
       data.push([dS_dt, dE_dt, dI_dt, dR_dt]);
     }
   
@@ -109,16 +109,16 @@ board = JXG.JSXGraph.initBoard('jxgbox', {
   }
   
   function ode() {
-    var I = [0, 100];
-    var T = 1000;
+    let I = [0, 100];
+    let T = 1000;
   
-    var f = function(t, x) {
-      var alpha = alpha_slider.Value();
-      var beta = beta_slider.Value();
-      var gamma = gamma_slider.Value();
-      var mju = mju_slider.Value();
+    let f = function(t, x) {
+      let alpha = alpha_slider.Value();
+      let beta = beta_slider.Value();
+      let gamma = gamma_slider.Value();
+      let mju = mju_slider.Value();
   
-      var y = [];
+      let y = [];
       y[0] = mju * N - mju * x[0] - beta * x[0] * x[1]/N;
       y[1] = beta * x[0] * x[1]/N - (mju + alpha) * x[1];   
       y[2] = alpha * x[1] - (gamma + mju) * x[2]; 
@@ -128,12 +128,12 @@ board = JXG.JSXGraph.initBoard('jxgbox', {
       return y;
     };
   
-    var x0 = [startSusceptible.Y(), startExposed.Y(), startInfected.Y(), startRecovered.Y()];
+    let x0 = [startSusceptible.Y(), startExposed.Y(), startInfected.Y(), startRecovered.Y()];
   
-    var data = solve_ode(x0, I, T, f);
+    let data = solve_ode(x0, I, T, f);
   
-    var q = I[0];
-    var h = (I[1] - I[0]) / T;
+    let q = I[0];
+    let h = (I[1] - I[0]) / T;
     for (let i = 0; i < data.length; i++) {
       data[i].push(q);
       q += h;
@@ -142,14 +142,14 @@ board = JXG.JSXGraph.initBoard('jxgbox', {
     return data;
   }
   
-  var data = ode();
+  let data = ode();
   
-  var t = [];
-  var dataSusceptible = [];
-  var dataExposed = [];
-  var dataInfected = [];
-  var dataRecovered = [];
-  for (var i = 0; i < data.length; i++) {
+  let t = [];
+  let dataSusceptible = [];
+  let dataExposed = [];
+  let dataInfected = [];
+  let dataRecovered = [];
+  for (let i = 0; i < data.length; i++) {
     dataSusceptible[i] = data[i][0];
     dataExposed[i] = data[i][1];
     dataInfected[i] = data[i][2];
@@ -162,7 +162,7 @@ board = JXG.JSXGraph.initBoard('jxgbox', {
     strokeWidth: '2px'
   });
   g3.updateDataArray = function() {
-    var data = ode();
+    let data = ode();
     this.dataX = [];
     this.dataY = [];
     for (let i = 0; i < data.length; i++) {
@@ -177,7 +177,7 @@ board = JXG.JSXGraph.initBoard('jxgbox', {
     strokeWidth: '2px'
   });
   g4.updateDataArray = function() {
-    var data = ode();
+    let data = ode();
     this.dataX = [];
     this.dataY = [];
     for (let i = 0; i < data.length; i++) {
@@ -192,7 +192,7 @@ board = JXG.JSXGraph.initBoard('jxgbox', {
     strokeWidth: '2px'
   });
   g4.updateDataArray = function() {
-    var data = ode();
+    let data = ode();
     this.dataX = [];
     this.dataY = [];
     for (let i = 0; i < data.length; i++) {
@@ -207,7 +207,7 @@ board = JXG.JSXGraph.initBoard('jxgbox', {
     strokeWidth: '2px'
   });
   g4.updateDataArray = function() {
-    var data = ode();
+    let data = ode();
     this.dataX = [];
     this.dataY = [];
     for (let i = 0; i < data.length; i++) {
