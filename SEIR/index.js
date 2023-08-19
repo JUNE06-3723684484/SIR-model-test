@@ -86,8 +86,8 @@ board = JXG.JSXGraph.initBoard('jxgbox', {
     fillColor: 'green'
   });
   
-  let T = 100;
-  let N = 100;
+  let T = 1000;
+  let N = 1000;
   let g3 = null;
   let g4 = null;
   let g5 = null;
@@ -109,7 +109,7 @@ board = JXG.JSXGraph.initBoard('jxgbox', {
   }
   
   function ode() {
-    let I = [0, 100];
+    let I = [0, 1000];
     let T = 1000;
   
     let f = function(t, x) {
