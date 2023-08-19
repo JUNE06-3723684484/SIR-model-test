@@ -24,7 +24,7 @@ gamma_slider = board.createElement('slider', [
     [90.0, 95.5],
     [0.0, 0.25, 1.0]
 ], {
-    name: '&gamma',
+    name: '&gamma;',
     strokeColor: 'black',
     fillColor: 'black'
 });
