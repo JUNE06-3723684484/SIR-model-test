@@ -51,8 +51,8 @@ startRecovered = board.createElement('glider', [0, 0, board.defaultAxes.y], {
     fillColor: 'green'
 });
 
-let T = 100;
-let N = 100;
+let T = 1000;
+let N = 1000;
 let g3 = null;
 let g4 = null;
 let g5 = null;
