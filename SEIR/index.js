@@ -125,13 +125,12 @@ board = JXG.JSXGraph.initBoard('jxgbox', {
       y[1] = beta * x[0] * x[2]/N - (mju + alpha) * x[1];   
       y[2] = alpha * x[1] - (gamma + mju) * x[2]; 
       y[3] = gamma * x[2] - mju * x[3];  */
-
       let y = [];
-      y[0] = mju * N - mju * x[0] - beta * x[0] * x[2]/N;
-      y[1] = beta * x[0] * x[2]/N - (mju + alpha) * x[1];   
+      y[0] = mju * N - mju * x[0] - beta * x[0] * x[1]/N;
+      y[1] = beta * x[0] * x[1]/N - (mju + alpha) * x[1];   
       y[2] = alpha * x[1] - (gamma + mju) * x[2]; 
-      y[3] = gamma * x[2] - mju * x[3]; 
-
+      y[3] = gamma * x[3] - mju * x[3]; 
+            
       return y;
     };
   
