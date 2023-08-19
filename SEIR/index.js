@@ -1,3 +1,5 @@
+let board;
+
 board = JXG.JSXGraph.initBoard('jxgbox', {
     boundingbox: [-5, 105, 105, -5],
     axis: true,
@@ -119,10 +121,10 @@ board = JXG.JSXGraph.initBoard('jxgbox', {
       let mju = mju_slider.Value();
   
       let y = [];
-      y[0] = mju * N - mju * x[0] - beta * x[0] * x[1]/N;
-      y[1] = beta * x[0] * x[1]/N - (mju + alpha) * x[1];   
+      y[0] = mju * N - mju * x[0] - beta * x[0] * x[2]/N;
+      y[1] = beta * x[0] * x[2]/N - (mju + alpha) * x[1];   
       y[2] = alpha * x[1] - (gamma + mju) * x[2]; 
-      y[3] = gamma * x[3] - mju * x[3]; 
+      y[3] = gamma * x[2] - mju * x[3]; 
       
      
       return y;
