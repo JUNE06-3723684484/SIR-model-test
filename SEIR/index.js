@@ -200,7 +200,7 @@ board = JXG.JSXGraph.initBoard('jxgbox', {
       this.dataY[i] = data[i][2];
     }
   };
-  
+
   
   g6 = board.createElement('curve', [t, dataRecovered], {
     strokeColor: 'green',
@@ -215,3 +215,44 @@ board = JXG.JSXGraph.initBoard('jxgbox', {
       this.dataY[i] = data[i][3];
     }
   };
+
+  function updateGraphs() {
+    g3.updateDataArray();
+    g4.updateDataArray();
+    g5.updateDataArray();
+    g6.updateDataArray();
+    board.update();
+  }
+  
+  alpha_slider.on('update', function() {
+    updateGraphs();
+  });
+  
+  beta_slider.on('update', function() {
+    updateGraphs();
+  });
+  
+  gamma_slider.on('update', function() {
+    updateGraphs();
+  });
+  
+  mju_slider.on('update', function() {
+    updateGraphs();
+  });
+  
+  startSusceptible.on('drag', function() {
+    updateGraphs();
+  });
+  
+  startExposed.on('drag', function() {
+    updateGraphs();
+  });
+  
+  startInfected.on('drag', function() {
+    updateGraphs();
+  });
+  
+  startRecovered.on('drag', function() {
+    updateGraphs();
+  });
+  
